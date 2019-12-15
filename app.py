@@ -193,6 +193,15 @@ def process_file():
     </html>
         '''
     else:
+        print('\n\n\n\n\n\n\n\n\n',celebs,'\n\n\n\n\n\n\n\n')
+        cr=[]
+        for  i in celebs:
+            cr.append(i[0])
+        cri = set(cr)
+        cri1 = list(cri)
+        names = ''
+        for i in cri1:
+            names+=i+'<br>'
         finalGuess = movieCounter.most_common(1)[0][0]
         return '''
          <!doctype html>
@@ -213,13 +222,17 @@ def process_file():
     <br>
     <h2 style="color:green">{}</h2>
     <br>
+    <h4>The actor(s) in the clip is/are:</h4>
+    <br>
+    <h2 style="color:green">{}</h2>
+    <br>
     <br>
     </div>
     </div>
     </center>
     </body>
     </html>
-        '''.format(finalGuess)
+        '''.format(finalGuess,names)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port=3000, debug=True)
