@@ -7,11 +7,10 @@ Spend hours thinking about it but still can’t find where the scene is from and
 FMIYC helps you find the movie or show with a clean and user friendly UI where the user is just required to upload the video onto our website. Once uploaded, within a few minutes, we give the user the awaited name he/ she was waiting for!
 
 ## How to use FMIYC?
-1. Download the video
-2. Upload the video on FMIYC
-3. Click on search
-4. See the movie or show you were so confused about
-5. Enjoy
+1. Upload the unknown video clip on FMIYC
+2. Click on search
+3. See the movie or show you were so confused about
+4. Enjoy! It's that simple :)
 
 ## Technologies used:
 1. HTML/CSS
