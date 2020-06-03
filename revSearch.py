@@ -2,7 +2,7 @@ import requests
 import json
 
 textEngineURL = "https://www.googleapis.com/customsearch/v1"
-searchKey = "AIzaSyAZnWGGLNprNZLgUJ18VaOiRgHxNQPvMBQ"
+searchKey = "AIzaSyAmrHH4531VU8H1KV5C32sqHI1HIV_L-dc"
 textSearchCX = "016220867362134571083:ntcgj0p32rg"
 
 
