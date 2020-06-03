@@ -125,9 +125,9 @@ def process_file():
     filename = request.args.get('filename')
     videoPath = '/'.join([dirname, filename])
 
-    audioPath = videoProcessing.getAudio(videoPath)
-    audioText = videoProcessing.getAudioText(audioPath)
-    respText = revSearch.reverseSearchText(audioText)
+    # audioPath = videoProcessing.getAudio(videoPath)
+    # audioText = videoProcessing.getAudioText(audioPath)
+    # respText = revSearch.reverseSearchText(audioText)
 
     # screenText = getTextFromFrame(screenPath)
     # respText2 = reverseSearchText(screenText)
@@ -155,12 +155,12 @@ def process_file():
     for guess in guess2:
         movieCounter[guess[0]] += guess[1]
 
-    for movie in movieCounter.keys():
-        movieCounter[movie] += respText.count(movie)
+    # for movie in movieCounter.keys():
+    #     movieCounter[movie] += respText.count(movie)
 
     bruteCount = Counter()
-    if len(movieCounter.keys()) == 0:
-        bruteCount = imdbFuncs.bruteForce(respText)
+    # if len(movieCounter.keys()) == 0:
+    #     bruteCount = imdbFuncs.bruteForce(respText)
 
     if len(bruteCount) > 0:
         movieCounter = bruteCount

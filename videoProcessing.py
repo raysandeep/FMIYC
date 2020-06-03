@@ -10,34 +10,34 @@ from google.cloud.speech import types
  videoPath: path to video
  return: string of audio in video
 """
-def getAudioText(audioPath):
-    # Instantiates a client
-    client = speech.SpeechClient()
+# def getAudioText(audioPath):
+#     # Instantiates a client
+#     client = speech.SpeechClient()
 
-    # Loads the audio into memory
-    with io.open(audioPath, 'rb') as audio_file:
-        content = audio_file.read()
-        audio = types.RecognitionAudio(content=content)
+#     # Loads the audio into memory
+#     with io.open(audioPath, 'rb') as audio_file:
+#         content = audio_file.read()
+#         audio = types.RecognitionAudio(content=content)
 
-    config = types.RecognitionConfig(
-        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=44100,
-        language_code='en-US')
+#     config = types.RecognitionConfig(
+#         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+#         sample_rate_hertz=44100,
+#         language_code='en-US')
 
-    # Detects speech in the audio file
-    response = client.recognize(config, audio)
+#     # Detects speech in the audio file
+#     response = client.recognize(config, audio)
 
-    audioLines = [result.alternatives[0].transcript for result in response.results]
-    print(audioLines)
-    return audioLines
+#     audioLines = [result.alternatives[0].transcript for result in response.results]
+#     print(audioLines)
+#     return audioLines
 
 
 
-def getAudio(videoPath):
-    command = "ffmpeg -i {} -ab 160k -ac 1 -ar 44100 -vn {}.wav".format(videoPath, videoPath[:-4])
-    subprocess.call(command, shell=True)
+# def getAudio(videoPath):
+#     command = "ffmpeg -i {} -ab 160k -ac 1 -ar 44100 -vn {}.wav".format(videoPath, videoPath[:-4])
+#     subprocess.call(command, shell=True)
 
-    return ''.join([videoPath[:-4], ".wav"])
+    # return ''.join([videoPath[:-4], ".wav"])
 
 def getFrames(dirname, videoPath):
     vidObj = cv2.VideoCapture(videoPath)
